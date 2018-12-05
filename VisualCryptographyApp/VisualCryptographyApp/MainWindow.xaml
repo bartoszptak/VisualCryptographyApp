@@ -10,10 +10,10 @@
     <StackPanel Background="#2D2C31">
         <Grid Height="40" Background="#1C1C1C">
             <StackPanel Orientation="Horizontal" HorizontalAlignment="Left" Margin="20 0">
-                <Label Background="{x:Null}" BorderBrush="{x:Null}" Foreground="#1477B9" FontSize="22" FontWeight="Bold" VerticalAlignment="Center">Visual Cryptography App</Label>
+                <Label Background="{x:Null}" BorderBrush="{x:Null}" Foreground="#1477B9" FontSize="22" FontWeight="Bold" VerticalAlignment="Center" FontFamily="Impact" TextOptions.TextFormattingMode="Display" BorderThickness="0">Visual Cryptography App</Label>
             </StackPanel>
             
-            <StackPanel  Orientation="Horizontal" HorizontalAlignment="Right" Margin="20 0">
+            <StackPanel  Orientation="Horizontal" HorizontalAlignment="Right" Margin="20 0" >
                 <Button x:Name="HomeButton" Content="HOME" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="#1477B9" FontSize="18" FontWeight="Bold" VerticalAlignment="Center" Click="HomeButton_Click"/>
                 <Button x:Name="StartButton" Content="START" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="#1477B9" FontSize="18" FontWeight="Bold" VerticalAlignment="Center" Click="StartButton_Click"/>
                 <Button x:Name="HelpButton" Content="HELP" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="#1477B9" FontSize="18" FontWeight="Bold" VerticalAlignment="Center" Click="HelpButton_Click"/>

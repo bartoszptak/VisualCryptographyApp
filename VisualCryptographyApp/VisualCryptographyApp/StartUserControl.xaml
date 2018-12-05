@@ -1,0 +1,22 @@
+﻿<UserControl x:Class="VisualCryptographyApp.StartUserControl"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:VisualCryptographyApp"
+             xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+             mc:Ignorable="d" 
+             d:DesignHeight="500" d:DesignWidth="1060">
+
+    <materialDesign:TransitioningContent x:Name="TrainsitionigContentSlide" OpeningEffect="{materialDesign:TransitionEffect FadeIn, Duration=0:0:0.9}">
+        <Grid x:Name="MainGrid">
+            <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
+                <Label Content="Step 1: Select algorithm mode" FontSize="28" Foreground="Snow" HorizontalAlignment="Center"/>
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center">
+                    <Button x:Name="CreateButton" Background="#1477B9" BorderBrush="#1C1C1C" Foreground="Snow" Content="Create" HorizontalAlignment="Center" FontFamily="Impact" FontSize="22" Width="130" Height="80" Margin="20" Click="CreateButton_Click"/>
+                    <Button x:Name="RecreateButton" Background="#1477B9" BorderBrush="#1C1C1C" Foreground="Snow" Content="Recreate" HorizontalAlignment="Center" FontFamily="Impact" FontSize="22" Width="130" Height="80" Margin="20" Click="RecreateButton_Click"/>
+                </StackPanel>
+            </StackPanel>
+        </Grid>
+    </materialDesign:TransitioningContent>
+</UserControl>

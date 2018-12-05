@@ -23,24 +23,32 @@ namespace VisualCryptographyApp
         public MainWindow()
         {
             InitializeComponent();
+            MainGrid.Children.Clear();
+            MainGrid.Children.Add(new HomeUserControl());
         }
 
         private void HomeButton_Click(object sender, RoutedEventArgs e)
         {
             MainGrid.Children.Clear();
-            //MainGrid.Children.Add(new Main_user_control());
+            MainGrid.Children.Add(new HomeUserControl());
+        }
+
+        private void StartButton_Click(object sender, RoutedEventArgs e)
+        {
+            MainGrid.Children.Clear();
+            MainGrid.Children.Add(new StartUserControl());
         }
 
         private void HelpButton_Click(object sender, RoutedEventArgs e)
         {
             MainGrid.Children.Clear();
-            //MainGrid.Children.Add(new Main_user_control());
+            MainGrid.Children.Add(new HelpUserControl());
         }
 
         private void AuthorButton_Click(object sender, RoutedEventArgs e)
         {
             MainGrid.Children.Clear();
-            //MainGrid.Children.Add(new Main_user_control());
+            MainGrid.Children.Add(new AuthorUserControl());
         }
 
         private void ExitButton_Click(object sender, RoutedEventArgs e)
@@ -48,9 +56,6 @@ namespace VisualCryptographyApp
             Application.Current.Shutdown();
         }
 
-        private void StartButton_Click(object sender, RoutedEventArgs e)
-        {
-
-        }
+     
     }
 }
