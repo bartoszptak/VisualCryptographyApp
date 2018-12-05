@@ -32,12 +32,10 @@ namespace VisualCryptographyApp
         {
             if(mode == StartUserControl.ModeEnum.Create)
             {
-                MainGrid.Children.Clear();
                 MainGrid.Children.Add(new Create2UserControl());
             }
             else
             {
-                MainGrid.Children.Clear();
                 MainGrid.Children.Add(new Recreate2UserControl());
             }
         }
@@ -46,14 +44,18 @@ namespace VisualCryptographyApp
         {
             if (mode == StartUserControl.ModeEnum.Create)
             {
-                MainGrid.Children.Clear();
                 MainGrid.Children.Add(new Create4UserControl());
             }
             else
             {
-                MainGrid.Children.Clear();
                 MainGrid.Children.Add(new Recreate4UserControl());
             }
+        }
+
+
+        private void BackButton_Click(object sender, RoutedEventArgs e)
+        {
+            (this.Parent as Panel).Children.Remove(this);
         }
     }
 }

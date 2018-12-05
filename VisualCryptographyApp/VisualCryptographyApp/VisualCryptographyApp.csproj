@@ -64,6 +64,12 @@
     <Compile Include="AuthorUserControl.xaml.cs">
       <DependentUpon>AuthorUserControl.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Create2UserControl.xaml.cs">
+      <DependentUpon>Create2UserControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Create4UserControl.xaml.cs">
+      <DependentUpon>Create4UserControl.xaml</DependentUpon>
+    </Compile>
     <Compile Include="HelpUserControl.xaml.cs">
       <DependentUpon>HelpUserControl.xaml</DependentUpon>
     </Compile>
@@ -73,10 +79,24 @@
     <Compile Include="ModelSelectUserControl.xaml.cs">
       <DependentUpon>ModelSelectUserControl.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Recreate2UserControl.xaml.cs">
+      <DependentUpon>Recreate2UserControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Recreate4UserControl.xaml.cs">
+      <DependentUpon>Recreate4UserControl.xaml</DependentUpon>
+    </Compile>
     <Compile Include="StartUserControl.xaml.cs">
       <DependentUpon>StartUserControl.xaml</DependentUpon>
     </Compile>
     <Page Include="AuthorUserControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Create2UserControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Create4UserControl.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -101,6 +121,14 @@
       <SubType>Code</SubType>
     </Compile>
     <Page Include="ModelSelectUserControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Recreate2UserControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Recreate4UserControl.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

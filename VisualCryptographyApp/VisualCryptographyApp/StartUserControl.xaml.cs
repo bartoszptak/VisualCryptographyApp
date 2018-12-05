@@ -31,16 +31,21 @@ namespace VisualCryptographyApp
 
         private void CreateButton_Click(object sender, RoutedEventArgs e)
         {
-            MainGrid.Children.Clear();
             mode = ModeEnum.Create;
             MainGrid.Children.Add(new ModelSelectUserControl(mode));
         }
 
         private void RecreateButton_Click(object sender, RoutedEventArgs e)
         {
-            MainGrid.Children.Clear();
             mode = ModeEnum.Recreate;
             MainGrid.Children.Add(new ModelSelectUserControl(mode));
         }
+
+        private void HelpButton_Click(object sender, RoutedEventArgs e)
+        {
+            MainGrid.Children.Clear();
+            MainGrid.Children.Add(new HelpUserControl());
+        }
+
     }
 }

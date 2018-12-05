@@ -24,5 +24,10 @@ namespace VisualCryptographyApp
         {
             InitializeComponent();
         }
+
+        private void BackButton_Click(object sender, RoutedEventArgs e)
+        {
+            (this.Parent as Panel).Children.Remove(this);
+        }
     }
 }
