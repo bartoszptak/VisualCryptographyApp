@@ -24,5 +24,33 @@ namespace VisualCryptographyApp
         {
             InitializeComponent();
         }
+
+        private void HomeButton_Click(object sender, RoutedEventArgs e)
+        {
+            MainGrid.Children.Clear();
+            //MainGrid.Children.Add(new Main_user_control());
+        }
+
+        private void HelpButton_Click(object sender, RoutedEventArgs e)
+        {
+            MainGrid.Children.Clear();
+            //MainGrid.Children.Add(new Main_user_control());
+        }
+
+        private void AuthorButton_Click(object sender, RoutedEventArgs e)
+        {
+            MainGrid.Children.Clear();
+            //MainGrid.Children.Add(new Main_user_control());
+        }
+
+        private void ExitButton_Click(object sender, RoutedEventArgs e)
+        {
+            Application.Current.Shutdown();
+        }
+
+        private void StartButton_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }

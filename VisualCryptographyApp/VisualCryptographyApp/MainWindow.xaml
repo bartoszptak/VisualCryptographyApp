@@ -5,8 +5,26 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:VisualCryptographyApp"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
-    <Grid>
-        
-    </Grid>
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        Title="Visual Cryptography App" Height="600" Width="1080" ResizeMode="NoResize">
+    <StackPanel Background="#2D2C31">
+        <Grid Height="40" Background="#1C1C1C">
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Left" Margin="20 0">
+                <Label Background="{x:Null}" BorderBrush="{x:Null}" Foreground="#1477B9" FontSize="22" FontWeight="Bold" VerticalAlignment="Center">Visual Cryptography App</Label>
+            </StackPanel>
+            
+            <StackPanel  Orientation="Horizontal" HorizontalAlignment="Right" Margin="20 0">
+                <Button x:Name="HomeButton" Content="HOME" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="#1477B9" FontSize="18" FontWeight="Bold" VerticalAlignment="Center" Click="HomeButton_Click"/>
+                <Button x:Name="StartButton" Content="START" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="#1477B9" FontSize="18" FontWeight="Bold" VerticalAlignment="Center" Click="StartButton_Click"/>
+                <Button x:Name="HelpButton" Content="HELP" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="#1477B9" FontSize="18" FontWeight="Bold" VerticalAlignment="Center" Click="HelpButton_Click"/>
+                <Button x:Name="AuthorButton" Content="AUTHOR" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="#1477B9" FontSize="18" FontWeight="Bold" VerticalAlignment="Center" Click="AuthorButton_Click"/>
+                <Button x:Name="ExitButton" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="#1477B9"  VerticalAlignment="Center" Style="{StaticResource MaterialDesignFloatingActionMiniAccentButton}" Click="ExitButton_Click">
+                    <materialDesign:PackIcon Kind="Power" FontSize="18" FontWeight="Bold" Width="25" Height="25"/>
+                </Button>
+            </StackPanel>
+        </Grid>
+        <Grid x:Name="MainGrid" Height="560" Background="#2D2C31">
+            
+        </Grid>
+    </StackPanel>
 </Window>
