@@ -13,8 +13,8 @@
             <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
                 <Label Content="Step 3: Select image to merge" FontSize="28" Foreground="Snow" HorizontalAlignment="Center"/>
                 <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center">
-                    <Button x:Name="SelectImageButton1" Background="#1477B9" BorderBrush="#1C1C1C" Foreground="Snow" Content="Select image" HorizontalAlignment="Center" FontSize="22" Width="200" Height="80" Margin="20"/>
-                    <Button x:Name="SelectImageButton2" Background="#1477B9" BorderBrush="#1C1C1C" Foreground="Snow" Content="Select image" HorizontalAlignment="Center" FontSize="22" Width="200" Height="80" Margin="20"/>
+                    <Button x:Name="SelectImageButton1" Background="#1477B9" BorderBrush="#1C1C1C" Foreground="Snow" Content="Select image" HorizontalAlignment="Center" FontSize="22" Width="200" Height="80" Margin="20" Click="SelectImageButton1_Click"/>
+                    <Button x:Name="SelectImageButton2" Background="#1477B9" BorderBrush="#1C1C1C" Foreground="Snow" Content="Select image" HorizontalAlignment="Center" FontSize="22" Width="200" Height="80" Margin="20" Click="SelectImageButton2_Click"/>
                 </StackPanel>
                 <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center">
                     <Button x:Name="RecreateButton" Background="#1477B9" BorderBrush="#1C1C1C" Foreground="#1C1C1C" Content="Recreate" HorizontalAlignment="Center" FontSize="22" Width="200" Height="80" Margin="20"/>

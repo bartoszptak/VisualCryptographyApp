@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.Win32;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -25,9 +26,37 @@ namespace VisualCryptographyApp
             InitializeComponent();
         }
 
+        private string[] fileNames = new string[2];
+
         private void BackButton_Click(object sender, RoutedEventArgs e)
         {
             (this.Parent as Panel).Children.Remove(this);
+        }
+
+        private void SelectImageButton1_Click(object sender, RoutedEventArgs e)
+        {
+            OpenFileDialog res = new OpenFileDialog();
+
+            res.Filter = "BitMap Files|*.bmp";
+
+            if (res.ShowDialog() == true)
+            {
+                fileNames[0] = res.FileName;
+                SelectImageButton1.Background = Brushes.DarkSlateGray;
+            }
+        }
+
+        private void SelectImageButton2_Click(object sender, RoutedEventArgs e)
+        {
+            OpenFileDialog res = new OpenFileDialog();
+
+            res.Filter = "BitMap Files|*.bmp";
+
+            if (res.ShowDialog() == true)
+            {
+                fileNames[1] = res.FileName;
+                SelectImageButton2.Background = Brushes.DarkSlateGray;
+            }
         }
     }
 }
