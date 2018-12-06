@@ -11,20 +11,20 @@ namespace VCAEngine
     {
         static void Main(string[] args)
         {
-            string path = "C:\\Users\\Bartolomeo\\Desktop\\GitHub\\VisualCryptographyApp\\Examples\\cap.bmp";
+            string path = "D:\\Github\\VisualCryptographyApp\\Examples\\exampleBefore.bmp";
 
-            string pathA = "C:\\Users\\Bartolomeo\\Desktop\\GitHub\\VisualCryptographyApp\\Examples\\capA.bmp";
-            string pathB = "C:\\Users\\Bartolomeo\\Desktop\\GitHub\\VisualCryptographyApp\\Examples\\capB.bmp";
+            string pathA = "D:\\Github\\VisualCryptographyApp\\Examples\\exampleA.bmp";
+            string pathB = "D:\\Github\\VisualCryptographyApp\\Examples\\exampleB.bmp";
 
-            string pathEND = "C:\\Users\\Bartolomeo\\Desktop\\GitHub\\VisualCryptographyApp\\Examples\\binaryEND.bmp";
+            string pathEND = "D:\\Github\\VisualCryptographyApp\\Examples\\exampleAfter.bmp";
 
             VCAEngine engine = new VCAEngine();
 
-            var result = engine.Create_2(path);
+            var result = engine.Create_4(path);
             result[0].Save(pathA, ImageFormat.Bmp);
             result[1].Save(pathB, ImageFormat.Bmp);
 
-            var result2 = engine.Recreate_2(pathA, pathB);
+            var result2 = engine.Recreate(pathA, pathB);
 
             result2.Save(pathEND, ImageFormat.Bmp);
 
