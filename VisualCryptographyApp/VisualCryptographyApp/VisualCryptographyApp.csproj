@@ -43,6 +43,7 @@
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
     <Reference Include="System.Xml" />
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Core" />
@@ -55,6 +56,9 @@
     <Reference Include="WindowsBase" />
     <Reference Include="PresentationCore" />
     <Reference Include="PresentationFramework" />
+    <Reference Include="WpfAnimatedGif, Version=1.4.17.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\WpfAnimatedGif.1.4.17\lib\net\WpfAnimatedGif.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <ApplicationDefinition Include="App.xaml">
@@ -64,11 +68,8 @@
     <Compile Include="AuthorUserControl.xaml.cs">
       <DependentUpon>AuthorUserControl.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Create2UserControl.xaml.cs">
-      <DependentUpon>Create2UserControl.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Create4UserControl.xaml.cs">
-      <DependentUpon>Create4UserControl.xaml</DependentUpon>
+    <Compile Include="CreateUserControl.xaml.cs">
+      <DependentUpon>CreateUserControl.xaml</DependentUpon>
     </Compile>
     <Compile Include="HelpUserControl.xaml.cs">
       <DependentUpon>HelpUserControl.xaml</DependentUpon>
@@ -76,27 +77,21 @@
     <Compile Include="HomeUserControl.xaml.cs">
       <DependentUpon>HomeUserControl.xaml</DependentUpon>
     </Compile>
-    <Compile Include="ModelSelectUserControl.xaml.cs">
-      <DependentUpon>ModelSelectUserControl.xaml</DependentUpon>
+    <Compile Include="RecreateUserControl.xaml.cs">
+      <DependentUpon>RecreateUserControl.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Recreate2UserControl.xaml.cs">
-      <DependentUpon>Recreate2UserControl.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Recreate4UserControl.xaml.cs">
-      <DependentUpon>Recreate4UserControl.xaml</DependentUpon>
+    <Compile Include="Result.xaml.cs">
+      <DependentUpon>Result.xaml</DependentUpon>
     </Compile>
     <Compile Include="StartUserControl.xaml.cs">
       <DependentUpon>StartUserControl.xaml</DependentUpon>
     </Compile>
+    <Compile Include="VCAEngine.cs" />
     <Page Include="AuthorUserControl.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Create2UserControl.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="Create4UserControl.xaml">
+    <Page Include="CreateUserControl.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -120,15 +115,11 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Page Include="ModelSelectUserControl.xaml">
+    <Page Include="RecreateUserControl.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Recreate2UserControl.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="Recreate4UserControl.xaml">
+    <Page Include="Result.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -163,6 +154,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="load.gif" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

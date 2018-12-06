@@ -24,5 +24,10 @@ namespace VisualCryptographyApp
         {
             InitializeComponent();
         }
+
+        private void Github_button_Click(object sender, RoutedEventArgs e)
+        {
+            System.Diagnostics.Process.Start("https://github.com/bartoszptak");
+        }
     }
 }

@@ -10,8 +10,11 @@
 
     <materialDesign:TransitioningContent x:Name="TrainsitionigContentSlide" OpeningEffect="{materialDesign:TransitionEffect FadeIn, Duration=0:0:0.9}">
         <Grid x:Name="MainGrid">
-            <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
-                <Label Content="To ja typ niepokorny" FontSize="28" Foreground="Snow"/>
+            <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center" Orientation="Vertical">
+                <TextBlock Text="Bartosz Ptak" VerticalAlignment="Center" FontSize="45" FontFamily="Champagne &amp; Limousines" FontWeight="Bold" Foreground="#1477B9" Margin="30"/>
+                <Button x:Name="github_button" Width="100" Height="100" Background="#1C1C1C" BorderBrush="{x:Null}" Padding="0" Foreground="#2D2C31" Click="Github_button_Click">
+                    <materialDesign:PackIcon Kind="GithubBox" Width="100" Height="100" />
+                </Button>
 
 
             </StackPanel>

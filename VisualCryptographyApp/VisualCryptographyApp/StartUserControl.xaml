@@ -9,16 +9,14 @@
              d:DesignHeight="500" d:DesignWidth="1060">
 
     <materialDesign:TransitioningContent x:Name="TrainsitionigContentSlide" OpeningEffect="{materialDesign:TransitionEffect FadeIn, Duration=0:0:0.7}">
-        <Grid x:Name="MainGrid">
+        <Grid>
             <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
-                <Label Content="Step 1: Select algorithm mode" FontSize="28" Foreground="Snow" HorizontalAlignment="Center"/>
-                <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center">
-                    <Button x:Name="CreateButton" Background="#1477B9" BorderBrush="#1C1C1C" Foreground="Snow" Content="Create" HorizontalAlignment="Center" FontSize="22" Width="130" Height="80" Margin="20" Click="CreateButton_Click"/>
-                    <Button x:Name="RecreateButton" Background="#1477B9" BorderBrush="#1C1C1C" Foreground="Snow" Content="Recreate" HorizontalAlignment="Center"  FontSize="22" Width="130" Height="80" Margin="20" Click="RecreateButton_Click"/>
-                    
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0 -10 0 0">
+                    <Button x:Name="CreateButton" Background="#1C1C1C" BorderBrush="#1C1C1C" Foreground="Snow" Content="Create" HorizontalAlignment="Center" FontSize="22" Width="130" Height="80" Margin="20" Click="CreateButton_Click"/>
+                    <Button x:Name="RecreateButton" Background="#1C1C1C" BorderBrush="#1C1C1C" Foreground="Snow" Content="Recreate" HorizontalAlignment="Center"  FontSize="22" Width="130" Height="80" Margin="20" Click="RecreateButton_Click"/>
                 </StackPanel>
-                <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center">
-                    <Button x:Name="HelpButton" Background="#1C1C1C" BorderBrush="#1477B9" Foreground="Snow" Content="Help" HorizontalAlignment="Center" FontSize="18" Width="100" Height="40" Margin="20" Click="HelpButton_Click"/>
+                <StackPanel x:Name="MainGrid" Height="400">
+
                 </StackPanel>
             </StackPanel>
         </Grid>

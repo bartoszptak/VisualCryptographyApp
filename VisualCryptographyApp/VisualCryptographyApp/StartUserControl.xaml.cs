@@ -21,9 +21,6 @@ namespace VisualCryptographyApp
     public partial class StartUserControl : UserControl
     {
 
-        public enum ModeEnum { Create, Recreate };
-        private ModeEnum mode;
-
         public StartUserControl()
         {
             InitializeComponent();
@@ -31,21 +28,16 @@ namespace VisualCryptographyApp
 
         private void CreateButton_Click(object sender, RoutedEventArgs e)
         {
-            mode = ModeEnum.Create;
-            MainGrid.Children.Add(new ModelSelectUserControl(mode));
+            MainGrid.Children.Clear();
+            MainGrid.Children.Add(new CreateUserControl());
         }
 
         private void RecreateButton_Click(object sender, RoutedEventArgs e)
         {
-            mode = ModeEnum.Recreate;
-            MainGrid.Children.Add(new ModelSelectUserControl(mode));
+            MainGrid.Children.Clear();
+            MainGrid.Children.Add(new RecreateUserControl());
         }
 
-        private void HelpButton_Click(object sender, RoutedEventArgs e)
-        {
-            MainGrid.Children.Clear();
-            MainGrid.Children.Add(new HelpUserControl());
-        }
 
     }
 }
