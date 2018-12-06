@@ -11,10 +11,10 @@ namespace VCAEngine
     {
         static void Main(string[] args)
         {
-            string path = "C:\\Users\\Bartolomeo\\Desktop\\GitHub\\VisualCryptographyApp\\Examples\\binary.bmp";
+            string path = "C:\\Users\\Bartolomeo\\Desktop\\GitHub\\VisualCryptographyApp\\Examples\\cap.bmp";
 
-            string pathA = "C:\\Users\\Bartolomeo\\Desktop\\GitHub\\VisualCryptographyApp\\Examples\\binaryA.bmp";
-            string pathB = "C:\\Users\\Bartolomeo\\Desktop\\GitHub\\VisualCryptographyApp\\Examples\\binaryB.bmp";
+            string pathA = "C:\\Users\\Bartolomeo\\Desktop\\GitHub\\VisualCryptographyApp\\Examples\\capA.bmp";
+            string pathB = "C:\\Users\\Bartolomeo\\Desktop\\GitHub\\VisualCryptographyApp\\Examples\\capB.bmp";
 
             string pathEND = "C:\\Users\\Bartolomeo\\Desktop\\GitHub\\VisualCryptographyApp\\Examples\\binaryEND.bmp";
 
