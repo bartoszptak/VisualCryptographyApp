@@ -36,11 +36,11 @@ namespace VisualCryptographyApp
         {
             if (SecretsTogglebutton.IsChecked.Value)
             {
-                SecretsLabel.Content = "4 secrets";
+                SecretsLabel.Content = "2 secrets 4 pixels";
             }
             else
             {
-                SecretsLabel.Content = "2 secrets";
+                SecretsLabel.Content = "2 secrets 2 pixels";
             }
         }
 

@@ -15,7 +15,7 @@
                 <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center">
                     <Button x:Name="SelectButton" Background="#1477B9" BorderBrush="#1C1C1C" Foreground="Snow" Content="Select image" HorizontalAlignment="Center" FontSize="22" Width="200" Height="60" Margin="20" Click="SelectButton_Click"/>
                     <ToggleButton x:Name="SecretsTogglebutton" Style="{StaticResource MaterialDesignSwitchToggleButton}" Click="SecretsTogglebutton_Click"  />
-                    <Label x:Name="SecretsLabel" Content="2 secrets" FontSize="25" BorderBrush="#1C1C1C" Foreground="#1477B9" VerticalAlignment="Center" FontWeight="Bold" Margin="10" Height="48"/>
+                    <Label x:Name="SecretsLabel" Content="2 secrets 2 pixels" FontSize="25" BorderBrush="#1C1C1C" Foreground="#1477B9" VerticalAlignment="Center" FontWeight="Bold" Margin="10" Height="48"/>
                 </StackPanel>
                 <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
                     <Button x:Name="CreateButton"  Background="#1C1C1C" BorderBrush="#1477B9" Foreground="#1477B9" Content="Create images" HorizontalAlignment="Center" FontSize="22" Width="200" Height="60" Margin="0 30" Click="CreateButton_Click" />
