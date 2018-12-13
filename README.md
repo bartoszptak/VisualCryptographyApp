@@ -13,4 +13,4 @@ Start image | Secret A | Secret B | Result
 #### 2 secrets - 2 pixels
 Start image | Secret A | Secret B | Result
 ------------ | ------------- | ------------- | -------------
-![](Examples/example_2.bmp) | ![](Examples/example_2_A.bmp) | ![](Examples/example_2_B.bmp) | ![](Examples/example_2_resutl.bmp)
+![](Examples/example_2.bmp) | ![](Examples/example_2_A.bmp) | ![](Examples/example_2_B.bmp) | ![](Examples/example_2_resut.bmp)
