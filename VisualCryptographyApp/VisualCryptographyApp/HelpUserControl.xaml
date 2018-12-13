@@ -11,9 +11,7 @@
     <materialDesign:TransitioningContent x:Name="TrainsitionigContentSlide" OpeningEffect="{materialDesign:TransitionEffect FadeIn, Duration=0:0:0.9}">
         <Grid x:Name="MainGrid">
             <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
-                <Label Content="HELP PLEASE" FontSize="28" Foreground="Snow"/>
-
-                
+                <Image Source="help.png"/>
             </StackPanel>
 
         </Grid>
