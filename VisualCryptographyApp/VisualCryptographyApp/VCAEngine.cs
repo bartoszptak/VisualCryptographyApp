@@ -10,16 +10,11 @@ namespace VisualCryptographyApp
 {
     class VCAEngine
     {
-        private readonly string White2Template = "01011010";
-        private readonly string Black2Template = "00111100";
+        private string[] czarne2 = { "1001", "0110" };
+        private string[] biale2 = { "1010", "0101" };
+        private string[] czarne4 = { "00111100", "11000011", "01011010", "10100101", "10010110", "01101001" };
+        private string[] biale4 = { "00110011", "11001100", "01010101", "10101010", "10011001", "01100110" };
 
-        private readonly string White4Template = "001100111100110001010101101010100110011010011001";
-        private readonly string Black4Template = "100101100110100100111100110000110101101010100101";
-
-        public VCAEngine()
-        {
-
-        }
 
         private bool IsPixelBlack(Color color)
         {
@@ -27,101 +22,197 @@ namespace VisualCryptographyApp
             else return false;
         }
 
-        private string GetBlack2Temp()
+
+        private Color CharToColor(char c)
         {
-            Random rand = new Random();
-            return Black2Template.Substring(rand.Next(0, 2) * 4, 4);
+            if (c == '0')
+                return Color.White;
+            else return Color.Black;
         }
 
-        private string GetWhite2Temp()
+        public bool IsSameColor(Color first, Color second)
         {
-            Random rand = new Random();
-            return White2Template.Substring(rand.Next(0, 2) * 4, 4);
-        }
-
-        private string GetBlack4Temp()
-        {
-            Random rand = new Random();
-            return Black4Template.Substring(rand.Next(0, 6) * 8, 8);
-        }
-
-        private string GetWhite4Temp()
-        {
-            Random rand = new Random();
-            return White4Template.Substring(rand.Next(0, 6) * 8, 8);
-        }
-
-        private Color GetColorFromChar(char a)
-        {
-            if (a.Equals('0')) return Color.FromArgb(255, 255, 255, 255);
-            else return Color.FromArgb(0, 0, 0, 0);
-        }
-
-        private void Set2Color(ref Bitmap bitmap, int x, int y, string temp)
-        {
-            bitmap.SetPixel(x, y, GetColorFromChar(temp[0]));
-            bitmap.SetPixel(x+1, y, GetColorFromChar(temp[1]));
-
-        }
-
-        private void Set4Color(ref Bitmap bitmap, int x, int y, string temp)
-        {
-            bitmap.SetPixel(x, y, GetColorFromChar(temp[0]));
-            bitmap.SetPixel(x + 1, y, GetColorFromChar(temp[1]));
-
-            bitmap.SetPixel(x, y + 1, GetColorFromChar(temp[2]));
-            bitmap.SetPixel(x + 1, y + 1, GetColorFromChar(temp[3]));
+            if (first.A.Equals(second.A)
+                && first.R.Equals(second.R)
+                && first.G.Equals(second.G)
+                && first.B.Equals(second.B))
+                return true;
+            else
+                return false;
         }
 
         public Bitmap[] Create_2(string path)
         {
             Bitmap[] result = new Bitmap[2];
-            Bitmap source = new Bitmap(path);
-            int x = source.Width;
-            int y = source.Height;
+            Bitmap img = new Bitmap(path);
 
-            result[0] = new Bitmap(2 * x, y, PixelFormat.Format24bppRgb);
-            result[1] = new Bitmap(2 * x, y, PixelFormat.Format24bppRgb);
+            Random rng = new Random();
+            Bitmap imgSekret1 = new Bitmap(img.Width * 2, img.Height);
+            Bitmap imgSekret2 = new Bitmap(img.Width * 2, img.Height);
 
-            for(int i=0; i<y; i++)
+            Color temp;
+            int pom;
+            for (int i = 0; i < img.Width; i++)
             {
-                for(int k=0; k<x; k++)
+                for (int j = 0; j < img.Height; j++)
                 {
-                    string temp;
-                    if (IsPixelBlack(source.GetPixel(k, i))) temp = GetBlack2Temp();
-                    else temp = GetWhite2Temp();
+                    pom = rng.Next(0, 2);
+                    temp = img.GetPixel(i, j);
+                    if ((int)temp.R < 128 && (int)temp.G < 128 && (int)temp.B < 128)
+                    {
+                        temp = Color.Black;
+                    }
+                    else
+                    {
+                        temp = Color.White;
+                    }
 
-                    Set2Color(ref result[0], k*2, i, temp.Substring(0, 2));
-                    Set2Color(ref result[1], k*2, i, temp.Substring(2, 2));
+                        if (IsSameColor(temp, Color.White))
+                    {
+                        if (pom == 0)
+                        {
+                            imgSekret1.SetPixel(i * 2, j, CharToColor(biale2[0][0]));
+                            imgSekret1.SetPixel(i * 2 + 1, j, CharToColor(biale2[0][1]));
+                            imgSekret2.SetPixel(i * 2, j, CharToColor(biale2[0][2]));
+                            imgSekret2.SetPixel(i * 2 + 1, j, CharToColor(biale2[0][3]));
+                        }
+                        else
+                        {
+                            imgSekret1.SetPixel(i * 2, j, CharToColor(biale2[1][0]));
+                            imgSekret1.SetPixel(i * 2 + 1, j, CharToColor(biale2[1][1]));
+                            imgSekret2.SetPixel(i * 2, j, CharToColor(biale2[1][2]));
+                            imgSekret2.SetPixel(i * 2 + 1, j, CharToColor(biale2[1][3]));
+                        }
+                    }
+                    else if (IsSameColor(temp, Color.Black))
+                    {
+                        if (pom == 0)
+                        {
+                            imgSekret1.SetPixel(i * 2, j, CharToColor(czarne2[0][0]));
+                            imgSekret1.SetPixel(i * 2 + 1, j, CharToColor(czarne2[0][1]));
+                            imgSekret2.SetPixel(i * 2, j, CharToColor(czarne2[0][2]));
+                            imgSekret2.SetPixel(i * 2 + 1, j, CharToColor(czarne2[0][3]));
+                        }
+                        else
+                        {
+                            imgSekret1.SetPixel(i * 2, j, CharToColor(czarne2[1][0]));
+                            imgSekret1.SetPixel(i * 2 + 1, j, CharToColor(czarne2[1][1]));
+                            imgSekret2.SetPixel(i * 2, j, CharToColor(czarne2[1][2]));
+                            imgSekret2.SetPixel(i * 2 + 1, j, CharToColor(czarne2[1][3]));
+                        }
+
+                    }
                 }
             }
 
+            result[0] = imgSekret1;
+            result[1] = imgSekret2;
             return result;
+        }
+
+        private void SetPixels4(ref Bitmap bmp1, ref Bitmap bmp2, int x, int y, string colors)
+        {
+            bmp1.SetPixel(x * 2, y * 2, CharToColor(colors[0]));
+            bmp1.SetPixel(x * 2 + 1, y * 2, CharToColor(colors[1]));
+            bmp1.SetPixel(x * 2, y * 2 + 1, CharToColor(colors[2]));
+            bmp1.SetPixel(x * 2 + 1, y * 2 + 1, CharToColor(colors[3]));
+            bmp2.SetPixel(x * 2, y * 2, CharToColor(colors[4]));
+            bmp2.SetPixel(x * 2 + 1, y * 2, CharToColor(colors[5]));
+            bmp2.SetPixel(x * 2, y * 2 + 1, CharToColor(colors[6]));
+            bmp2.SetPixel(x * 2 + 1, y * 2 + 1, CharToColor(colors[7]));
         }
 
         public Bitmap[] Create_4(string path)
         {
             Bitmap[] result = new Bitmap[2];
-            Bitmap source = new Bitmap(path);
-            int x = source.Width;
-            int y = source.Height;
-
-            result[0] = new Bitmap(2 * x, 2 * y, PixelFormat.Format24bppRgb);
-            result[1] = new Bitmap(2 * x, 2 * y, PixelFormat.Format24bppRgb);
-
-            for (int i = 0; i < y; i++)
+            Bitmap img = new Bitmap(path);
+            Random rng = new Random();
+            Bitmap imgSekret1 = new Bitmap(img.Width * 2, img.Height * 2);
+            Bitmap imgSekret2 = new Bitmap(img.Width * 2, img.Height * 2);
+            Color temp;
+            int pom;
+            for (int i = 0; i < img.Width; i++)
             {
-                for (int k = 0; k < x; k++)
+                for (int j = 0; j < img.Height; j++)
                 {
-                    string temp;
-                    if (IsPixelBlack(source.GetPixel(k, i))) temp = GetBlack4Temp();
-                    else temp = GetWhite4Temp();
+                    pom = rng.Next(0, 6);
+                    temp = img.GetPixel(i, j);
+                    if ((int)temp.R < 128 && (int)temp.G < 128 && (int)temp.B < 128)
+                    {
+                        temp = Color.Black;
+                    }
+                    else
+                    {
+                        temp = Color.White;
+                    }
+                    if (IsSameColor(temp, Color.White))
+                    {
+                        if (pom == 0)
+                        {
+                            SetPixels4(ref imgSekret1, ref imgSekret2, i, j, biale4[0]);
+                        }
+                        else if (pom == 1)
+                        {
+                            SetPixels4(ref imgSekret1, ref imgSekret2, i, j, biale4[1]);
+                        }
 
-                    Set4Color(ref result[0], k * 2, i * 2, temp.Substring(0, 4));
-                    Set4Color(ref result[1], k * 2, i * 2, temp.Substring(4, 4));
+                        else if (pom == 2)
+                        {
+                            SetPixels4(ref imgSekret1, ref imgSekret2, i, j, biale4[2]);
+                        }
+
+                        else if (pom == 3)
+                        {
+                            SetPixels4(ref imgSekret1, ref imgSekret2, i, j, biale4[3]);
+                        }
+
+                        else if (pom == 4)
+                        {
+                            SetPixels4(ref imgSekret1, ref imgSekret2, i, j, biale4[4]);
+                        }
+
+                        else if (pom == 5)
+                        {
+                            SetPixels4(ref imgSekret1, ref imgSekret2, i, j, biale4[5]);
+                        }
+                    }
+                    else if (IsSameColor(temp, Color.Black))
+                    {
+                        if (pom == 0)
+                        {
+                            SetPixels4(ref imgSekret1, ref imgSekret2, i, j, czarne4[0]);
+                        }
+                        else if (pom == 1)
+                        {
+                            SetPixels4(ref imgSekret1, ref imgSekret2, i, j, czarne4[1]);
+                        }
+
+                        else if (pom == 2)
+                        {
+                            SetPixels4(ref imgSekret1, ref imgSekret2, i, j, czarne4[2]);
+                        }
+
+                        else if (pom == 3)
+                        {
+                            SetPixels4(ref imgSekret1, ref imgSekret2, i, j, czarne4[3]);
+                        }
+
+                        else if (pom == 4)
+                        {
+                            SetPixels4(ref imgSekret1, ref imgSekret2, i, j, czarne4[4]);
+                        }
+
+                        else if (pom == 5)
+                        {
+                            SetPixels4(ref imgSekret1, ref imgSekret2, i, j, czarne4[5]);
+                        }
+
+                    }
                 }
             }
 
+            result[0] = imgSekret1;
+            result[1] = imgSekret2;
             return result;
         }
 
@@ -148,11 +239,11 @@ namespace VisualCryptographyApp
                 {
                     if(IsPixelBlack(source[0].GetPixel(k,i)) || IsPixelBlack(source[1].GetPixel(k, i)))
                     {
-                        result.SetPixel(k, i, GetColorFromChar('1'));
+                        result.SetPixel(k, i, Color.Black);
                     }
                     else
                     {
-                        result.SetPixel(k, i, GetColorFromChar('0'));
+                        result.SetPixel(k, i, Color.White);
                     }
                 }
             }
